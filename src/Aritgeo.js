@@ -2,13 +2,13 @@
 
 module.exports = {
 
-	let value;
-let multiple=0;
-let diff=0;
-const aritGeo = (series) =>{
-    if(series.toString() === "" ){
-        return '0';
-        
+	
+     aritGeo: (series) =>{
+    	let value;
+        let multiple=0;
+        let diff=0;
+        if(series.toString() === "" ){
+            return '0';
     }
     
     if (validation(series)){
@@ -28,10 +28,10 @@ const aritGeo = (series) =>{
       return 'Array of numbers is required';
     }
  
-};
+},
 
 
-const validation = (series) =>{
+   validation: (series) =>{
   
     for (let number=0; number<series.length; number++){
         if (typeof series[number] === 'number'){
@@ -44,12 +44,11 @@ const validation = (series) =>{
     }
    return value;
 
-};
+},
 
 
 
-
-const isGeo = (series) =>{
+ isGeo: (series) =>{
     multiple = series[1]/series[0];
     for (let number=0; number<series.length-1; number++){
       if (series[number+1]/series[number] === multiple){
@@ -61,9 +60,9 @@ const isGeo = (series) =>{
     }
    }
    return value;
-};
+},
 
-const isArit = (series) =>{
+  isArit: (series) =>{
     diff = series[1]-series[0];
     for (let number=0; number<series.length-1; number++){
         if (series[number+1] - series[number] === diff){
