@@ -1,0 +1,30 @@
+{
+  "name": "dayone",
+  "version": "1.0.0",
+  "description": "an app to check if an array is in geometric or arithmetic progression",
+  "main": "src/Aritgeo.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha tests/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aimeedyki/arit-geo.git"
+  },
+  "keywords": [
+    "tdd",
+    "arithmetic"
+  ],
+  "author": "Amarachi akuwudike",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aimeedyki/arit-geo/issues"
+  },
+  "homepage": "https://github.com/aimeedyki/arit-geo#readme",
+  "dependencies": {
+    "chai": "^4.1.0",
+    "mocha": "^3.4.2"
+  }
+}
