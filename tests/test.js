@@ -1,10 +1,12 @@
 const assert = require('chai').assert;
 const myApp = require('../src/Aritgeo.js');
+
+console.log(myApp.aritGeo([2,4,6,8]))
 describe("Arithmetic or Geometric", function(){
 
 	describe("handle invalid input", function(){
-		it ("should return error for [m,n,2]}", function(){
-			assert.equal('Array of numbers is required', myApp.aritGeo([m,n,2]));
+		it ("should return error for ['m','n',2]}", function(){
+			assert.equal('Array of numbers is required', myApp.aritGeo(['m','n',2]));
 		});
 	})
 
