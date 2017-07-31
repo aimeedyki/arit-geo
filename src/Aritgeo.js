@@ -1,36 +1,20 @@
 'use strict';
+        let value;
+        let multiple=0;
+        let diff=0;
 
-module.exports = {
-
-
-	validation: function (series){
-  
-    for (let number=0; number<series.length; number++){
-        if (typeof series[number] === 'number'){
-          let value = true;
-        }
-        else {
-            let value = false;
-            break;
-        }
-    }
-   return this.value;
-
-},
-
-	
-     aritGeo: function(series){
+function aritGeo (series){
     	
         if(series.toString() === "" ){
             return '0';
     }
     
-    if (this.validation(series)){
-        if(this.isArit(series) || this.isGeo(series)){
-           if (this.isGeo(series)){
+    if (validation(series)){
+        if(isArit(series) || isGeo(series)){
+           if (isGeo(series)){
              return 'Geometric';
            }
-           if (this.isArit(series)){
+           if (isArit(series)){
              return 'Arithmetic';
            }
         }
@@ -42,35 +26,51 @@ module.exports = {
       return 'Array of numbers is required';
     }
  
-},
+}
+
+
+  function validation (series){
+  
+    for (let number=0; number<series.length; number++){
+        if (typeof series[number] === 'number'){
+          value = true;
+        }
+        else {
+            value = false;
+            break;
+        }
+    }
+   return value;
+
+}
 
 
 
- isGeo: function(series){
-    let multiple = series[1]/series[0];
+ function isGeo (series){
+    multiple = series[1]/series[0];
     for (let number=0; number<series.length-1; number++){
-      if (series[number+1]/series[number] === this.multiple){
-           let  value = true;
+      if (series[number+1]/series[number] === multiple){
+            value = true;
         }
         else{
-            let value =false;
+            value =false;
             break;
     }
    }
-   return this.value;
-},
+   return value;
+}
 
-  isArit: function(series){
-    let diff = series[1]-series[0];
+  function isArit (series){
+    diff = series[1]-series[0];
     for (let number=0; number<series.length-1; number++){
-        if (series[number+1] - series[number] === this.diff){
-            let value = true;
+        if (series[number+1] - series[number] === diff){
+            value = true;
         }
         else{
-            let value = false;
+            value = false;
             break;
     }
    }
-   return this.value;
+   return value;
 }
-}
+exports.aritGeo = aritGeo;
